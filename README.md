@@ -6,7 +6,7 @@ Example usage in DSC.
 Sets the curent node as Active.
 
 
-	Configuration DhcpServer
+	Configuration DhcpServerFailover
 	{
 	    param (
 		[Parameter(Mandatory)]
@@ -15,7 +15,7 @@ Sets the curent node as Active.
 
 
 	    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
-	    Import-DscResource -ModuleName (@{ModuleName='DHCPFailover'; RequiredVersion='0.1'} )
+	    Import-DscResource -ModuleName (@{ModuleName='xDHCPFailover'; RequiredVersion='0.1'} )
 
 	    Node $AllNodes.Where{$_.Role -eq "DhcpServer"}.NodeName
 	    {
@@ -26,7 +26,7 @@ Sets the curent node as Active.
 		}
 
 			foreach ($scope in $node.Scopes) {
-				DhcpFailover "failover_$($scope.ScopeId)"
+				xDhcpFailover "failover_$($scope.ScopeId)"
 				{
 				  Ensure = $scope.FailoverEnsure
 				  UniqueKey = "$($scope.ScopeId)_$($scope.FailoverName)"
