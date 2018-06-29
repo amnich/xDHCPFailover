@@ -63,5 +63,5 @@ Example Configuration data for DSC
 			}                
 		    )            
         	}    
-    	     )
+     )
 	}
