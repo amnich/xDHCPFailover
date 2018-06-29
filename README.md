@@ -3,7 +3,7 @@
 DSC Resource to configure the DHCP Failover in HotStandby
 
 Example usage in DSC.
-Sets the curent node as Active.
+Sets the current node as Active.
 
 
 	Configuration DhcpServerFailover
@@ -41,7 +41,7 @@ Sets the curent node as Active.
 	}
 
 
-Example Configuration data for DSC
+Example configuration data for DSC
 
 	@{
 	    AllNodes = @(
